@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>products</title>
+</head>
+<body>
+<h1>all products</h1>
+{% for message in messages %}
+    	<P>{{ message }}</P>
+    {% endfor %}
+<table>
+    <tr>
+        <th>Product name</th>
+        <th>Product quantity</th>
+        <th>Product price</th>
+        <th>Product description</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    {% for product in products %}
+    	<tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.qtty }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.description }}</td>
+            <td><a href="/delete/{{ product.id }}">Delete</a></td>
+            <td><a href="">Update</a></td>
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
